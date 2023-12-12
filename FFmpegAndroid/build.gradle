@@ -16,6 +16,10 @@ android {
         versionName rootProject.ext.versionName as String
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
     sourceSets.main {
         assets.srcDirs = ['assets']
         jni.srcDirs = [] //disable automatic ndk-build

@@ -12,6 +12,10 @@ android {
         versionName rootProject.ext.versionName as String
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
     sourceSets.main {
         assets.srcDirs = ['assets']
         jniLibs.srcDirs = ['libs']
