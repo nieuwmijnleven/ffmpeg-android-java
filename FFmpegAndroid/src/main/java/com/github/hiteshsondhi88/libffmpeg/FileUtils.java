@@ -15,12 +15,12 @@ import java.util.Map;
 
 class FileUtils {
 
-    static final String ffmpegFileName = "ffmpeg";
+    static final String ffmpegFileName = "libffmpeg.so";
     private static final int DEFAULT_BUFFER_SIZE = 1024 * 4;
     private static final int EOF = -1;
 
     static boolean copyBinaryFromAssetsToData(Context context, String fileNameFromAssets, String outputFileName) {
-		
+		/*
 		// create files directory under /data/data/package name
 		File filesDirectory = getFilesDirectory(context);
 		
@@ -44,11 +44,14 @@ class FileUtils {
 			Log.e("issue in coping binary from assets to data. ", e);
 		}
         return false;
+    */
+    return true;
 	}
 
 	static File getFilesDirectory(Context context) {
 		// creates files directory under data/data/package name
-        return context.getFilesDir();
+        //return context.getFilesDir();
+        return new File(context.getApplicationInfo().nativeLibraryDir);
 	}
 
     static String getFFmpeg(Context context) {
